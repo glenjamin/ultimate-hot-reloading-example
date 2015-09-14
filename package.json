@@ -17,7 +17,6 @@
     "eslint-plugin-react": "^3.3.2",
     "express": "^4.13.3",
     "react": "^0.13.3",
-    "react-redux": "^2.1.2",
     "react-transform-webpack-hmr": "^0.1.4",
     "redux": "^3.0.0",
     "request": "^2.61.0",
