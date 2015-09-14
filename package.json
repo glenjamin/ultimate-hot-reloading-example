@@ -1,0 +1,28 @@
+{
+  "name": "fluctuations-example-react-iso",
+  "version": "1.0.0",
+  "private": true,
+  "description": "React example",
+  "author": "Glen Mailer <glen@stainlessed.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.24",
+    "babel-eslint": "^4.1.2",
+    "babel-loader": "^5.3.2",
+    "babel-plugin-react-display-name": "^2.0.0",
+    "babel-plugin-react-transform": "^1.0.3",
+    "babel-runtime": "^5.8.24",
+    "eslint": "^1.4.1",
+    "eslint-plugin-react": "^3.3.2",
+    "express": "^4.13.3",
+    "react": "^0.13.3",
+    "react-redux": "^2.1.2",
+    "react-transform-webpack-hmr": "^0.1.4",
+    "redux": "^3.0.0",
+    "request": "^2.61.0",
+    "webpack": "^1.12.1",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-hot-middleware": "^2.0.1"
+  }
+}
