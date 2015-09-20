@@ -13,6 +13,9 @@ var App = React.createClass({
         <button onClick={() => this.props.dispatch({type: "INC"})}>
           +1
         </button>
+        <p>
+          <a href="/whoami">Server-only route</a>
+        </p>
       </div>
     );
   },
