@@ -1,10 +1,14 @@
 {
-  "name": "ultimate-hot-reloading-example",
+  "name": "ultimate-hot-reloading-example ",
   "version": "1.0.0",
   "private": true,
   "description": "React example",
   "author": "Glen Mailer <glen@stainlessed.co.uk>",
   "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "babel": "^5.8.23",
     "babel-core": "^5.8.24",
@@ -17,7 +21,7 @@
     "eslint-plugin-react": "^3.3.2",
     "express": "^4.13.3",
     "react": "^0.13.3",
-    "react-transform-webpack-hmr": "^0.1.4",
+    "react-transform-hmr": "^1.0.0",
     "redux": "^3.0.0",
     "request": "^2.61.0",
     "webpack": "^1.12.1",

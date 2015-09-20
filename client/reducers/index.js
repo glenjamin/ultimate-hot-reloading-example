@@ -1,5 +1,5 @@
 var initial = {
-  num: 0,
+  num: 5,
 };
 var handlers = {
   INC(s) {

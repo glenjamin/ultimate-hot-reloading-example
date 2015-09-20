@@ -12,7 +12,7 @@ function renderApp(path, callback) {
   var store = require('./store')();
 
   var rendered = React.renderToString(
-    <App state={store.getState()} />
+    <App state={store.getState()} dispatch={() => null}/>
   );
 
   var page = template

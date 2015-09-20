@@ -14,7 +14,8 @@ app.use(require("webpack-dev-middleware")(compiler, {
 }));
 app.use(require("webpack-hot-middleware")(compiler));
 
-// Do "hot-reloading" on server
+// Do "hot-reloading" of react stuff on the server
+// Throw away the cached client modules and let them be re-required next time
 compiler.plugin('done', function() {
   console.log("Clearing /client/ module cache from server");
   Object.keys(require.cache).forEach(function(id) {

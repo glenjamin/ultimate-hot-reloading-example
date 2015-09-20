@@ -26,8 +26,22 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'client')
+      loader: 'babel',
+      include: path.join(__dirname, 'client'),
+      query: {
+        optional: ['runtime'],
+        plugins: [
+          'react-display-name',
+          'react-transform'
+        ],
+        extra: {
+          'react-transform': [{
+            'target': 'react-transform-hmr',
+            'imports': ['react'],
+            'locals': ['module']
+          }]
+        }
+      }
     }]
   }
 };
