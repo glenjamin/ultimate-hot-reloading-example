@@ -24,7 +24,9 @@ module.exports = {
     }
   },
   module: {
-    loaders: [{
+    loaders: [
+    // Javascript
+    {
       test: /\.js$/,
       loader: 'babel',
       include: path.join(__dirname, 'client'),
@@ -42,6 +44,15 @@ module.exports = {
           }]
         }
       }
-    }]
+    },
+
+    // CSS
+    { 
+      test: /\.css$/, 
+      include: path.join(__dirname, 'client'),
+      loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[path][name]-[local]'
+    }
+
+    ]
   }
 };

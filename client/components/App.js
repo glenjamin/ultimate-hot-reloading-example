@@ -1,4 +1,5 @@
 var React = require('react');
+var styles = require('./App.css');
 
 var App = React.createClass({
   propTypes: {
@@ -10,7 +11,7 @@ var App = React.createClass({
       <div>
         <h1>Demo</h1>
         <p>{this.props.state.num}</p>
-        <button onClick={() => this.props.dispatch({type: "INC"})}>
+        <button className={styles.increment} onClick={() => this.props.dispatch({type: "INC"})}>
           +1
         </button>
         <p>
