@@ -20,3 +20,7 @@
   * Change the responses in `server/app.js` to see the express routes reload
   * Change the CSS in `client/common/layout.css` to see imported CSS reload
   * Change the CSS in `client/components/App.css` to see the imported CSS reload
+
+## Demo
+
+![ultimate-reload-css](https://cloud.githubusercontent.com/assets/133832/10411396/56e276ea-6f64-11e5-8d71-d7006a32c38e.gif)
