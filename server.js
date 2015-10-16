@@ -1,15 +1,5 @@
-require('css-modules-require-hook')({
-  generateScopedName: function (exportedName, exportedPath) {
-    // This path should match the localIdentName in your webpack.config.js.
-    var path = exportedPath
-              .substr(1)
-              .replace(/\//g, "-")
-              .replace('.css', '');
-
-    return path + "-" + exportedName;
-  }
-});
 require('babel/register');
+var WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 
 var express = require('express');
 
@@ -25,6 +15,12 @@ app.use(require("webpack-dev-middleware")(compiler, {
   noInfo: true, publicPath: config.output.publicPath
 }));
 app.use(require("webpack-hot-middleware")(compiler));
+
+//  Create hot-reloading bundle for server rendering
+var basePath = require('path').resolve(__dirname, '.');
+var webpackIsomorphicTools = new WebpackIsomorphicTools(require('./webpack-isomorphic-tools'))
+    .development(true)
+    .server(basePath, function() { });
 
 // Include server routes as a middleware
 app.use(function(req, res, next) {

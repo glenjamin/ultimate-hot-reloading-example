@@ -6,3 +6,9 @@
     border-radius: 3px;
     background-color: green;
 }
+
+.headline {
+    background: url('./react-logo.png') no-repeat;
+    padding-left: 45px;
+    background-size: contain;
+}

@@ -1,2 +1,6 @@
 node_modules/
 npm-debug.log
+
+# webpack-isomorphic-tools
+/webpack-stats.debug.json
+/webpack-assets.json
