@@ -9,7 +9,7 @@ var App = React.createClass({
   render() {
     return (
       <div>
-        <h1>Demo</h1>
+        <h1 className={styles.headline}>Demo</h1>
         <p>{this.props.state.num}</p>
         <button className={styles.increment} onClick={() => this.props.dispatch({type: "INC"})}>
           +1

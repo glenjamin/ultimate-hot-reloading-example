@@ -1,6 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 
+var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
+var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-tools'));
+
 module.exports = {
   devtool: '#eval-source-map',
   entry: [
@@ -15,7 +18,8 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    webpackIsomorphicToolsPlugin.development()
   ],
   resolve: {
     extensions: ['', '.js'],
@@ -47,12 +51,16 @@ module.exports = {
     },
 
     // CSS
-    { 
-      test: /\.css$/, 
+    {
+      test: /\.css$/,
       include: path.join(__dirname, 'client'),
-      loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[path][name]-[local]'
-    }
+      loader: 'style!css?modules&importLoaders=1&localIdentName=[path][name]-[local]'
+    },
 
+    // Image
+    {
+      test: /\.(png|jpg|jpeg|png|gif|svg)$/, loader: 'url?limit=8192'
+    }
     ]
   }
 };
