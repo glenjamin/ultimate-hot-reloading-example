@@ -12,6 +12,10 @@
   * Data fetching through a remote API
   * Multiple pages via Routing
 
+## Installing
+
+Once cloned locally, run `npm install`. To start the server run `npm start` and visit `http://localhost:3000/` in your browser.
+
 ## Try it out
 
   * Change initial in `reducers/index.js` and hit refresh to see server redux reload
