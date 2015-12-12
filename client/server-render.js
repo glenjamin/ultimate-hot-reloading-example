@@ -1,6 +1,7 @@
 var fs = require('fs');
 
 var React = require('react');
+var ReactDOMServer = require('react-dom/server');
 
 var App = require('./components/App');
 
@@ -11,7 +12,7 @@ var template = fs.readFileSync(__dirname + '/../index.html', 'utf8');
 function renderApp(path, callback) {
   var store = require('./store')();
 
-  var rendered = React.renderToString(
+  var rendered = ReactDOMServer.renderToString(
     <App state={store.getState()} dispatch={() => null}/>
   );
 
