@@ -15,7 +15,7 @@
     "babel-eslint": "^4.1.2",
     "babel-loader": "^5.3.2",
     "babel-plugin-react-display-name": "^2.0.0",
-    "babel-plugin-react-transform": "^1.0.3",
+    "babel-plugin-react-transform": "^1.1.1",
     "babel-runtime": "^5.8.24",
     "chokidar": "^1.0.6",
     "css-loader": "^0.19.0",
