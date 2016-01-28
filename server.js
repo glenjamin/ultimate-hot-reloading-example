@@ -42,6 +42,7 @@ app.get('*', function(req, res, next) {
 // Throw away cached modules and re-require next time
 // Ensure there's no important state in there!
 const watcher = chokidar.watch('./server');
+
 watcher.on('ready', function() {
   watcher.on('all', function() {
     console.log("Clearing /server/ module cache from server");

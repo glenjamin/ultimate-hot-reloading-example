@@ -7,6 +7,7 @@ module.exports = function configureStore(initialState) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
       const nextRootReducer = require('./reducers');
+
       store.replaceReducer(nextRootReducer);
     });
   }
