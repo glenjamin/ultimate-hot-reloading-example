@@ -1,12 +1,8 @@
 {
-<<<<<<< HEAD
   "presets": ["es2015", "react", "stage-2"],
   "plugins": [
     "transform-runtime",
     "transform-class-properties",
     "transform-decorators-legacy"
   ]
-=======
-    "stage": 2
->>>>>>> master
 }
