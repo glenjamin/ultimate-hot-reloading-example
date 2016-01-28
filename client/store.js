@@ -1,12 +1,12 @@
-const { createStore } = require('redux');
+var { createStore } = require('redux');
 
 module.exports = function configureStore(initialState) {
-  const store = createStore(require('./reducers'), initialState);
+  var store = createStore(require('./reducers'), initialState);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
-      const nextRootReducer = require('./reducers');
+      var nextRootReducer = require('./reducers');
 
       store.replaceReducer(nextRootReducer);
     });

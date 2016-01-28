@@ -1,6 +1,6 @@
-const express = require('express');
+var express = require('express');
 
-const app = express.Router();
+var app = express.Router();
 
 app.get('/whoami', (req, res) => {
   res.send("You are a winner");

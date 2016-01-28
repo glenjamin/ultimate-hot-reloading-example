@@ -1,7 +1,7 @@
 require('css-modules-require-hook')({
   generateScopedName(exportedName, exportedPath) {
     // This path should match the localIdentName in your webpack.config.js.
-    const path = exportedPath
+    var path = exportedPath
               .substr(1)
               .replace(/\//g, "-")
               .replace('.css', '');
@@ -10,14 +10,14 @@ require('css-modules-require-hook')({
 });
 require('babel-register');
 
-const express = require('express');
+var express = require('express');
 
-const chokidar = require('chokidar');
-const webpack = require('webpack');
-const config = require('./webpack.config');
-const compiler = webpack(config);
+var chokidar = require('chokidar');
+var webpack = require('webpack');
+var config = require('./webpack.config');
+var compiler = webpack(config);
 
-const app = express();
+var app = express();
 
 // Serve hot-reloading bundle to client
 app.use(require("webpack-dev-middleware")(compiler, {
@@ -41,7 +41,7 @@ app.get('*', function(req, res, next) {
 // Do "hot-reloading" of express stuff on the server
 // Throw away cached modules and re-require next time
 // Ensure there's no important state in there!
-const watcher = chokidar.watch('./server');
+var watcher = chokidar.watch('./server');
 
 watcher.on('ready', function() {
   watcher.on('all', function() {
@@ -61,8 +61,12 @@ compiler.plugin('done', function() {
   });
 });
 
-app.listen(3000, function(err) {
+var http = require('http');
+var server = http.createServer(app);
+server.listen(3000, 'localhost', function(err) {
   if (err) throw err;
 
-  console.log('Listening on port: 3000');
+  var addr = server.address();
+
+  console.log('Listening at http://%s:%d', addr.address, addr.port);
 });

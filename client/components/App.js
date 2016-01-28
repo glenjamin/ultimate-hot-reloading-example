@@ -1,20 +1,15 @@
-const React = require('react');
-const { connect } = require('react-redux');
+var React = require('react');
+var { connect } = require('react-redux');
 
-const styles = require('./App.css');
+var styles = require('./App.css');
 
-@connect(state => ({
-  count: state,
-}))
-class App extends React.Component {
-  static propTypes = {
+var App = React.createClass({
+  propTypes: {
     count: React.PropTypes.object,
     dispatch: React.PropTypes.func
-  };
-
+  },
   render() {
-    const { count, dispatch } = this.props;
-
+    var { count, dispatch } = this.props;
     return (
       <div>
         <h1>Demo</h1>
@@ -30,7 +25,22 @@ class App extends React.Component {
         </p>
       </div>
     );
-  }
+  },
+});
+
+function mapStateToProps(state) {
+  return {
+    count: state,
+  };
 }
 
-module.exports = App;
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch: (action) => dispatch(action)
+  };
+}
+
+module.exports = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
