@@ -1,12 +1,5 @@
 require('css-modules-require-hook')({
-  generateScopedName(exportedName, exportedPath) {
-    // This path should match the localIdentName in your webpack.config.js.
-    var path = exportedPath
-              .substr(1)
-              .replace(/\//g, "-")
-              .replace('.css', '');
-    return path + "-" + exportedName;
-  }
+  generateScopedName: '[path][name]-[local]',
 });
 require('babel-register');
 
