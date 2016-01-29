@@ -1,8 +1,6 @@
 {
-  "presets": ["react", "stage-2"],
+  "presets": ["es2015","react"],
   "plugins": [
     "transform-runtime",
-    "transform-es2015-modules-commonjs",
-    "transform-es2015-destructuring",
   ]
 }
