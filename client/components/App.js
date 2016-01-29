@@ -3,10 +3,10 @@ var { connect } = require('react-redux');
 
 var styles = require('./App.css');
 
-var App = React.createClass({
+var App = connect(state => ({count: state}))(React.createClass({
   propTypes: {
-    count: React.PropTypes.object,
-    dispatch: React.PropTypes.func
+    count: React.PropTypes.object.isRequired,
+    dispatch: React.PropTypes.func.isRequired
   },
   render() {
     var { count, dispatch } = this.props;
@@ -26,21 +26,6 @@ var App = React.createClass({
       </div>
     );
   },
-});
+}));
 
-function mapStateToProps(state) {
-  return {
-    count: state,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    dispatch: (action) => dispatch(action)
-  };
-}
-
-module.exports = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+module.exports = App;
