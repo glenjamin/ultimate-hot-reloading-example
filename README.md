@@ -10,9 +10,9 @@ Universal JavaScript is the future of web development. Unfortunately, there are 
   - Modular testing (this template uses Mocha and Chai)
   - Ready to deploy to Heroku as is
 
-  The goal of this project is to build a simple and instantly deployable web application template with the simplicity of Rails and the full power of Universal JavaScript.
+The goal of this project is to build a simple and instantly deployable web application template with the simplicity of Rails and the full power of Universal JavaScript.
 
-  This project builds on [glenjamin's ultimate hot reloading example](https://github.com/glenjamin/ultimate-hot-reloading-example).
+This project builds on [glenjamin's ultimate hot reloading example](https://github.com/glenjamin/ultimate-hot-reloading-example).
 
 ### Installing
 
