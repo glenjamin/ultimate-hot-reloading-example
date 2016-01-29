@@ -3,14 +3,16 @@ var initial = {
 };
 var handlers = {
   INC(s) {
-    s.num += 1;
-    return s;
+    return {
+      num: s.num + 1
+    };
   }
 };
 function reducer(state = initial, action) {
   if (handlers[action.type]) {
     return handlers[action.type](state);
   }
+
   return state;
 }
 

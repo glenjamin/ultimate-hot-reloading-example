@@ -37,5 +37,7 @@
         "space-before-function-paren": [1, "never"],
         "spaced-comment": [1, "always"],
         "react/prop-types": 1,
+        "react/jsx-uses-react": 1,
+        "react/react-in-jsx-scope": 1,
     }
 }

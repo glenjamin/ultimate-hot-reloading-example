@@ -1,15 +1,7 @@
 require('css-modules-require-hook')({
-  generateScopedName: function (exportedName, exportedPath) {
-    // This path should match the localIdentName in your webpack.config.js.
-    var path = exportedPath
-              .substr(1)
-              .replace(/\//g, "-")
-              .replace('.css', '');
-
-    return path + "-" + exportedName;
-  }
+  generateScopedName: '[path][name]-[local]',
 });
-require('babel/register');
+require('babel-register');
 
 var express = require('express');
 
@@ -43,6 +35,7 @@ app.get('*', function(req, res, next) {
 // Throw away cached modules and re-require next time
 // Ensure there's no important state in there!
 var watcher = chokidar.watch('./server');
+
 watcher.on('ready', function() {
   watcher.on('all', function() {
     console.log("Clearing /server/ module cache from server");

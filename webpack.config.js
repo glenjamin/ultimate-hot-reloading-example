@@ -1,6 +1,7 @@
 var path = require('path');
 var qs = require('querystring');
 var webpack = require('webpack');
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
 module.exports = {
   devtool: '#eval-source-map',
@@ -32,20 +33,20 @@ module.exports = {
         loader: 'babel',
         include: path.join(__dirname, 'client'),
         query: {
-          optional: ['runtime'],
-          plugins: [
-            'react-display-name',
-            'react-transform'
-          ],
-          extra: {
-            'react-transform': {
-              'transforms': [{
-                'transform': 'react-transform-hmr',
-                'imports': ['react'],
-                'locals': ['module']
-              }]
+          "env": {
+            "development": {
+              "presets": ["react-hmre"],
+              "plugins": [
+                ["react-transform", {
+                  "transforms": [{
+                    "transform": "react-transform-hmr",
+                    "imports": ["react"],
+                    "locals": ["module"]
+                  }]
+                }]
+              ]
             }
-          }
+          },
         }
       },
 

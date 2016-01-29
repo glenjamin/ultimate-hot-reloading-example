@@ -1,17 +1,23 @@
 var React = require('react');
+var { connect } = require('react-redux');
+
 var styles = require('./App.css');
 
-var App = React.createClass({
+var App = connect(state => ({count: state}))(React.createClass({
   propTypes: {
-    state: React.PropTypes.object.isRequired,
+    count: React.PropTypes.object.isRequired,
     dispatch: React.PropTypes.func.isRequired
   },
   render() {
+    var { count, dispatch } = this.props;
     return (
       <div>
         <h1>Demo</h1>
-        <p>{this.props.state.num}</p>
-        <button className={styles.increment} onClick={() => this.props.dispatch({type: "INC"})}>
+        <p>{count.num}</p>
+        <button
+          className={styles.increment}
+          onClick={() => dispatch({type: "INC"})}
+        >
           +1
         </button>
         <p>
@@ -20,6 +26,6 @@ var App = React.createClass({
       </div>
     );
   },
-});
+}));
 
 module.exports = App;
