@@ -40,7 +40,7 @@ watcher.on('ready', function() {
   watcher.on('all', function() {
     console.log("Clearing /server/ module cache from server");
     Object.keys(require.cache).forEach(function(id) {
-      if (/\/server\//.test(id)) delete require.cache[id];
+      if (/[\/\\]server[\/\\]/.test(id)) delete require.cache[id];
     });
   });
 });
@@ -50,7 +50,7 @@ watcher.on('ready', function() {
 compiler.plugin('done', function() {
   console.log("Clearing /client/ module cache from server");
   Object.keys(require.cache).forEach(function(id) {
-    if (/\/client\//.test(id)) delete require.cache[id];
+    if (/[\/\\]client[\/\\]/.test(id)) delete require.cache[id];
   });
 });
 
