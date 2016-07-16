@@ -1,14 +1,12 @@
 /* eslint-env browser */
 
-var React = require('react');
-var ReactDOM = require('react-dom');
+import App from './components/App';
+import configureStore from './store';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-var { Provider } = require('react-redux');
-
-var store = require('./store')(window.initialStoreData);
-
-var App = require('./components/App');
-
+const store = configureStore(window.initialStoreData);
 window.dev = { store };
 
 ReactDOM.render(

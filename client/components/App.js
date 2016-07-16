@@ -1,15 +1,14 @@
-var React = require('react');
-var { connect } = require('react-redux');
+import React from 'react';
+import styles from './App.css';
+import { connect } from 'react-redux';
 
-var styles = require('./App.css');
-
-var App = connect(state => ({count: state}))(React.createClass({
+const App = connect(state => ({count: state}))(React.createClass({
   propTypes: {
     count: React.PropTypes.object.isRequired,
     dispatch: React.PropTypes.func.isRequired
   },
   render() {
-    var { count, dispatch } = this.props;
+    const { count, dispatch } = this.props;
     return (
       <div>
         <h1>Demo</h1>
@@ -28,4 +27,4 @@ var App = connect(state => ({count: state}))(React.createClass({
   },
 }));
 
-module.exports = App;
+export default App;

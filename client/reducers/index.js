@@ -1,7 +1,7 @@
-var initial = {
+const initial = {
   num: 5,
 };
-var handlers = {
+const handlers = {
   INC(s) {
     return {
       num: s.num + 1

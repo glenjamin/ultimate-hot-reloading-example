@@ -1,12 +1,12 @@
-var { createStore } = require('redux');
+import { createStore } from 'redux';
 
-module.exports = function configureStore(initialState) {
-  var store = createStore(require('./reducers'), initialState);
+const configureStore = (initialState) => {
+  const store = createStore(require('./reducers'), initialState);
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
-      var nextRootReducer = require('./reducers');
+      const nextRootReducer = require('./reducers');
 
       store.replaceReducer(nextRootReducer);
     });
@@ -14,3 +14,5 @@ module.exports = function configureStore(initialState) {
 
   return store;
 };
+
+export default configureStore;
