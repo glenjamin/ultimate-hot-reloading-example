@@ -33,11 +33,12 @@
         "consistent-this": [1, "nope-dont-capture-this"],
         "max-nested-callbacks": [2, 3],
         "no-nested-ternary": 1,
-        "space-after-keywords": [1, "always"],
+        "keyword-spacing": 1,
         "space-before-function-paren": [1, "never"],
         "spaced-comment": [1, "always"],
         "react/prop-types": 1,
         "react/jsx-uses-react": 1,
+        "react/jsx-uses-vars": 1,
         "react/react-in-jsx-scope": 1,
     }
 }
