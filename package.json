@@ -6,7 +6,7 @@
   "author": "Glen Mailer <glen@stainlessed.co.uk>",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
+    "start": "babel-node server.js",
     "lint": "eslint ."
   },
   "dependencies": {

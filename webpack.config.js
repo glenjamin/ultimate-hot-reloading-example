@@ -1,9 +1,10 @@
-var path = require('path');
-var qs = require('querystring');
-var webpack = require('webpack');
+import webpack from 'webpack';
+import path from 'path';
+import qs from 'querystring';
+
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
-module.exports = {
+export default {
   devtool: '#eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
