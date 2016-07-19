@@ -1,22 +1,22 @@
-require('css-modules-require-hook')({
-  generateScopedName: '[path][name]-[local]',
-});
-require('babel-register');
+import 'babel-register';
+import chokidar from 'chokidar';
+import config from './webpack.config';
+import cssModulesRequireHook from 'css-modules-require-hook';
+import express from 'express';
+import http from 'http';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 
-var express = require('express');
-
-var chokidar = require('chokidar');
-var webpack = require('webpack');
-var config = require('./webpack.config');
-var compiler = webpack(config);
-
-var app = express();
+cssModulesRequireHook({generateScopedName: '[path][name]-[local]'});
+const compiler = webpack(config);
+const app = express();
 
 // Serve hot-reloading bundle to client
-app.use(require("webpack-dev-middleware")(compiler, {
+app.use(webpackDevMiddleware(compiler, {
   noInfo: true, publicPath: config.output.publicPath
 }));
-app.use(require("webpack-hot-middleware")(compiler));
+app.use(webpackHotMiddleware(compiler));
 
 // Include server routes as a middleware
 app.use(function(req, res, next) {
@@ -34,7 +34,7 @@ app.get('*', function(req, res, next) {
 // Do "hot-reloading" of express stuff on the server
 // Throw away cached modules and re-require next time
 // Ensure there's no important state in there!
-var watcher = chokidar.watch('./server');
+const watcher = chokidar.watch('./server');
 
 watcher.on('ready', function() {
   watcher.on('all', function() {
@@ -54,12 +54,11 @@ compiler.plugin('done', function() {
   });
 });
 
-var http = require('http');
-var server = http.createServer(app);
+const server = http.createServer(app);
 server.listen(3000, 'localhost', function(err) {
   if (err) throw err;
 
-  var addr = server.address();
+  const addr = server.address();
 
   console.log('Listening at http://%s:%d', addr.address, addr.port);
 });
