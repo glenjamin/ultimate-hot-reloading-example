@@ -1,4 +1,3 @@
-import 'babel-register';
 import chokidar from 'chokidar';
 import config from './webpack.config';
 import cssModulesRequireHook from 'css-modules-require-hook';

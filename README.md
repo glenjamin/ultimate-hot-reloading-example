@@ -1,5 +1,9 @@
 # Ultimate Hot Reloading Example
 
+👉👉👉👉 This project is intended as an *example* of how to fit an application together, the idea is that you read the code and understand how it works - then apply the same approach in your own projects. 👈👈👈👈
+
+This is **NOT** intended as a boilerplate or a starter kit, I don't recommend using it as a base for a project unless you're happy that you know how stuff fits together.
+
 ## Goals
 
   * Only one running node process ✅
@@ -9,6 +13,7 @@
   * Server-side React component hot reloading ✅
   * Server-side express routes hot reloading ✅
   * Client side [css-modules](https://github.com/css-modules/css-modules) hot reloading ✅
+  * Using mostly ES6 module syntax, except where dynamic loading is needed ✅
   * Data fetching through a remote API
   * Multiple pages via Routing
 
