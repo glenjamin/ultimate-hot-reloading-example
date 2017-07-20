@@ -31,7 +31,7 @@ export default {
       // Javascript
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         include: path.join(__dirname, 'client'),
         query: {
           "env": {
