@@ -21,7 +21,7 @@ export default {
     new webpack.NoErrorsPlugin()
   ],
   resolve: {
-    extensions: ['', '.js'],
+    extensions: ['.js'],
     alias: {
       request: 'browser-request'
     }
