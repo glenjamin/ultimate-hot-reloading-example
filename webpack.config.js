@@ -18,10 +18,10 @@ export default {
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   resolve: {
-    extensions: ['', '.js'],
+    extensions: ['.js'],
     alias: {
       request: 'browser-request'
     }
@@ -31,7 +31,7 @@ export default {
       // Javascript
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         include: path.join(__dirname, 'client'),
         query: {
           "env": {
