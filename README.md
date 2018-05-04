@@ -17,6 +17,12 @@ This is **NOT** intended as a boilerplate or a starter kit, I don't recommend us
   * Data fetching through a remote API
   * Multiple pages via Routing
 
+## Why?
+
+Hot reloading & related techniques can be used to provide an ultra-fast feedback cycle. Watch this video if you'd like to hear more about why this is great.
+
+[![Video: Confident User Interface Programming - CodeMesh 2016](https://img.youtube.com/vi/62Y9JCOtzGY/0.jpg)](https://www.youtube.com/watch?v=62Y9JCOtzGY)
+
 ## Installing
 
 Once cloned locally, run `npm install`. To start the server run `npm start` and visit `http://localhost:3000/` in your browser.
