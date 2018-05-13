@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './App.css';
 import { connect } from 'react-redux';
+import { hot } from 'react-hot-loader';
+import PropTypes from 'prop-types';
 
-const App = connect(state => ({count: state}))(React.createClass({
-  propTypes: {
-    count: React.PropTypes.object.isRequired,
-    dispatch: React.PropTypes.func.isRequired
-  },
+class App extends Component {
   render() {
     const { count, dispatch } = this.props;
     return (
@@ -24,7 +22,12 @@ const App = connect(state => ({count: state}))(React.createClass({
         </p>
       </div>
     );
-  },
-}));
+  }
+}
 
-export default App;
+App.propTypes = {
+  count: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired
+};
+
+export default hot(module)( connect(state => ({count: state}))(App) );
