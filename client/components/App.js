@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
 import PropTypes from 'prop-types';
 
+import Child from './Child';
+
 class App extends Component {
   render() {
     const { count, dispatch } = this.props;
@@ -17,6 +19,7 @@ class App extends Component {
         >
           +1
         </button>
+        <Child />
         <p>
           <a href="/whoami">Server-only route</a>
         </p>

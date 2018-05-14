@@ -9,7 +9,7 @@ This is **NOT** intended as a boilerplate or a starter kit, I don't recommend us
   * Only one running node process ✅
   * Client-side Redux reducer hot reloading ✅
   * Server-side Redux reducer hot reloading ✅
-  * Client-side React component hot reloading ✅
+  * Client-side React component hot reloading (preserving this.state) ✅
   * Server-side React component hot reloading ✅
   * Server-side express routes hot reloading ✅
   * Client side [css-modules](https://github.com/css-modules/css-modules) hot reloading ✅

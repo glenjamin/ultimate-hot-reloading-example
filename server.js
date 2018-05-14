@@ -22,14 +22,6 @@ app.use(function(req, res, next) {
   require('./server/app')(req, res, next);
 });
 
-// Anything else gets passed to the client app's server rendering
-app.get('*', function(req, res, next) {
-  require('./client/server-render')(req.path, function(err, page) {
-    if (err) return next(err);
-    res.send(page);
-  });
-});
-
 // Do "hot-reloading" of express stuff on the server
 // Throw away cached modules and re-require next time
 // Ensure there's no important state in there!
@@ -41,6 +33,14 @@ watcher.on('ready', function() {
     Object.keys(require.cache).forEach(function(id) {
       if (/[\/\\]server[\/\\]/.test(id)) delete require.cache[id];
     });
+  });
+});
+
+// Anything else gets passed to the client app's server rendering
+app.get('*', function(req, res, next) {
+  require('./client/server-render')(req.path, function(err, page) {
+    if (err) return next(err);
+    res.send(page);
   });
 });
 
