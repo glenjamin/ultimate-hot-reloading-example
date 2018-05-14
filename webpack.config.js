@@ -5,6 +5,7 @@ import qs from 'querystring';
 process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
 export default {
+  mode: process.env.NODE_ENV,
   devtool: '#eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
@@ -27,7 +28,7 @@ export default {
     }
   },
   module: {
-    loaders: [
+    rules: [
       // Javascript
       {
         test: /\.js$/,
@@ -36,16 +37,7 @@ export default {
         query: {
           "env": {
             "development": {
-              "presets": ["react-hmre"],
-              "plugins": [
-                ["react-transform", {
-                  "transforms": [{
-                    "transform": "react-transform-hmr",
-                    "imports": ["react"],
-                    "locals": ["module"]
-                  }]
-                }]
-              ]
+              "plugins": ["react-hot-loader/babel"],
             }
           },
         }

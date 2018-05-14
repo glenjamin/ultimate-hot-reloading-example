@@ -1,6 +1,7 @@
 {
-  "presets": ["es2015","react"],
-  "plugins": [
-    "transform-runtime",
-  ]
+  "presets": [
+    "react",
+    ["env"]
+  ],
+  "plugins": ["transform-runtime"]
 }
